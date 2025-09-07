@@ -353,3 +353,4 @@ C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-maccatalyst\maccata
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\WorkDays.Client.pdb
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\WorkDays.Client.genruntimeconfig.cache
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\WorkDays.Client.dll
+C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\WorkDays.Client.sourcelink.json
