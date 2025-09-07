@@ -268,3 +268,4 @@ C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\refint\WorkDays.Api.dl
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.pdb
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.genruntimeconfig.cache
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\ref\WorkDays.Api.dll
+C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.sourcelink.json
