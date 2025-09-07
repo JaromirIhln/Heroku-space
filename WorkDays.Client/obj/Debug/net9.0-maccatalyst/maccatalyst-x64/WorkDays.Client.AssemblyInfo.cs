@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e40fcdfa0edc7d01e30a8c0d406f85a3efc471aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,7 +23,7 @@ namespace WorkDays.Client
 #endif
             builder.Services.AddSingleton(new HttpClient
             {
-                BaseAddress = new Uri(Constants.ApiEndpoints.BaseUrl?? "localhost:5287"),
+                BaseAddress = new Uri("https://work-days-app-663252075ceb.herokuapp.com/"),
             });
 
             return builder.Build();

@@ -1,4 +1,4 @@
-﻿@WorkDays.Api_HostAddress = https://localhost:7194
+﻿@WorkDays.Api_HostAddress = https://work-days-app-663252075ceb.herokuapp.com
 @WorkDays.Api_Http_HostAddress = http://localhost:5287
 
 GET {{WorkDays.Api_HostAddress}}/api/workday

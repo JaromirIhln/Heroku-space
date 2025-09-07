@@ -1,0 +1,28 @@
+# .gitignore for .NET, MAUI and Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+# Build results
+[Dd]ebug/
+[Rr]elease/
+# OS generated files
+.DS_Store
+Thumbs.db
+# Rider
+.idea/
+# VS Code
+.vscode/
+# Test results
+TestResults/
+# NuGet
+*.nupkg
+# Others
+*.log
+*.db
+*.sqlite
+*.bak
+*.swp
