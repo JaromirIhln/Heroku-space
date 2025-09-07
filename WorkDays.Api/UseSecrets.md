@@ -24,10 +24,14 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Host=localhost;Da
 
 ## Použití v aplikaci
 
-V `Program.cs` nebo `appsettings.json` použijte:
+V `Program.cs` použijte:
 
 ```csharp
 builder.Configuration.GetConnectionString("DefaultConnection")
+```
+V  `appsettings.json`  použijte:
+```json
+"DefaultConnection": ""
 ```
 
 ## Další informace
