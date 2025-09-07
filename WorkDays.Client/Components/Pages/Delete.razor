@@ -1,0 +1,50 @@
+﻿@page "/delete/{Id:int}"
+@using WorkDays.Client.Models
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<h3>Delete</h3>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private WorkDayDto? workDay;
+
+    protected override async Task OnInitializedAsync()
+    {
+        workDay = await Http.GetFromJsonAsync<WorkDayDto>($"api/workday/{Id}");
+    }
+
+    private async Task DeleteWorkDay()
+    {
+        if (workDay != null)
+        {
+            await Http.DeleteAsync($"api/workday/{workDay.WorkDayId}");
+        }
+
+        Navigation.NavigateTo("/");
+    }
+}
+
+@if (workDay == null)
+{
+    <p>Načítám...</p>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@workDay.Date.ToString("D")</h5>
+            <p class="card-text"><strong>Začátek:</strong> @workDay.StartTime</p>
+            <p class="card-text"><strong>Konec:</strong> @workDay.EndTime</p>
+            <p class="card-text"><strong>Přestávka:</strong> @workDay.Break</p>
+            <p class="card-text"><strong>Typ:</strong> @workDay.Type</p>
+            <p class="card-text"><strong>Je svátek:</strong> @(workDay.IsHoliday ? "Ano" : "Ne")</p>
+            <p class="card-text"><strong>Celkem hodin:</strong> @workDay.TotalHours</p>
+            <button class="btn btn-danger" @onclick="DeleteWorkDay">Smazat</button>
+            <a class="btn btn-secondary" href="/">Zpět na seznam</a>
+            <a class="btn btn-primary" href="/detail/@Id">Zrušit</a>
+        </div>
+    </div>
+}

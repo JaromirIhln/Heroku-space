@@ -1,0 +1,132 @@
+﻿@WorkDays.Api_HostAddress = https://localhost:7194
+@WorkDays.Api_Http_HostAddress = http://localhost:5287
+
+GET {{WorkDays.Api_HostAddress}}/api/workday
+
+###
+POST {{WorkDays.Api_HostAddress}}/api/workday
+Content-Type: application/json
+
+{
+    "date": "2025-09-16T01:00:00Z",
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "break": "00:30:00",
+    "isHoliday": false,
+    "type": 0
+}
+###
+POST {{WorkDays.Api_HostAddress}}/api/workday
+Content-Type: application/json
+
+{
+    "date": "2025-09-08T01:00:00Z",
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "break": "00:30:00",
+    "isHoliday": false,
+    "type": 0
+}
+###
+@id=2
+GET {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+
+
+###
+
+PUT {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+Content-Type: application/json
+
+{
+    "workDayId": 5,
+    "date": "2025-09-06T01:00:00Z",
+    "startTime": "10:30:00",
+    "endTime": "16:00:00",
+    "break": "00:20:00",
+    "isHoliday": false,
+    "type": 0,
+    "totalHours": "00:00:00"
+}
+
+###
+@id=5
+DELETE {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+###
+POST {{WorkDays.Api_HostAddress}}/api/workday
+Content-Type: application/json
+
+{
+   "workDayId": 5,
+    "date": "2025-09-08T01:00:00Z",
+    "startTime": "10:30:00",
+    "endTime": "16:00:00",
+    "break": "00:20:00",
+    "isHoliday": false,
+    "type": 3,
+    "totalHours": "00:00:00"
+}
+
+###
+
+PUT {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+Content-Type: application/json
+
+{
+    "workDayId": 1,
+    "date": "2025-09-06T01:00:00Z",
+    "startTime": "08:30:00",
+    "endTime": "16:00:00",
+    "break": "00:30:00",
+    "isHoliday": false,
+    "type": 0,
+    "totalHours": "00:00:00"
+}
+
+###
+
+@id=1
+GET {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+
+###
+PUT {{WorkDays.Api_HostAddress}}/api/workday/{{id}}
+Content-Type: application/json
+
+{
+    "workDayId": 1,
+    "date": "2025-09-06T01:00:00Z",
+    "startTime": "08:30:00",
+    "endTime": "16:00:00",
+    "break": "00:30:00",
+    "isHoliday": false,
+    "type": 0,
+    "totalHours": "00:00:00"
+}
+###
+# HTTP requests for WorkDays.Api
+# http://localhost:5287/api/workday/1
+@id=7
+GET {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
+
+###
+
+# http request update http://localhost:5287/api/workday/10
+
+PUT {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
+Content-Type: application/json
+
+{
+    "workDayId": 7,
+    "date": "2025-09-11T01:00:00Z",
+    "startTime": "11:00:00",
+    "endTime": "16:00:00",
+    "break": "00:30:00",
+    "isHoliday": false,
+    "type": "ShortWorkDay"
+   
+}
+
+###
+
+GET {{WorkDays.Api_Http_HostAddress}}/api/workday
+
+###

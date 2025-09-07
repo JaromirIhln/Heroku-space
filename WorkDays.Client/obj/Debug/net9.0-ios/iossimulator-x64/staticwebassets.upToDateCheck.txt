@@ -1,0 +1,14 @@
+wwwroot\css\app.css
+wwwroot\css\bootstrap.min.css
+wwwroot\css\bootstrap.min.css.map
+wwwroot\css\WorkDays.Client.styles.css
+wwwroot\index.html
+wwwroot\js\bootstrap.min.js
+wwwroot\js\bootstrap.min.js.map
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\css\app.css
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\css\bootstrap.min.css
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\css\bootstrap.min.css.map
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\css\WorkDays.Client.styles.css
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\index.html
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\js\bootstrap.min.js
+C:\Users\battl\Heroku-space\WorkDays.Client\wwwroot\js\bootstrap.min.js.map

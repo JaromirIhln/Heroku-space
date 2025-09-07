@@ -1,0 +1,113 @@
+﻿@page "/"
+
+@using WorkDays.Client.Models
+@using System.Linq
+@inject HttpClient Http
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="#">Kalendář  <span class="fa fa-calendar-check-o"></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><span class="fa fa-home"></span> Domů </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><span class="fa fa-info-circle"></span> O aplikaci </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nabídka 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">ÚKOLY</a> <span class="fa fa-tasks"></span></li>
+            <li><a class="dropdown-item" href="#">POZNÁMKY</a> <span class="fa fa-sticky-note"></span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">NÁKUPY</a> <span class="fa fa-shopping-cart"></span></li>
+          </ul>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>-->
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Hledat" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Hledat</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<h3 class="text-center shadow-lg p-2 mb-2 mt-2 bg-body rounded ms-2 me-2">Pracovní kalendář <span class="ms-3 fa fa-calendar"></span></h3>
+<div class="mb-3 text-left">
+    <a class="btn btn-success btn-sm me-2 ms-3 shadow p-2 mt-2 rounded" href="/create">Nový <span class="fa fa-calendar-plus-o"></span></a>
+</div>
+@if (!string.IsNullOrEmpty(logMessage))
+{
+    <div class="alert alert-info ms-2 me-2">
+        @logMessage
+    </div>
+}
+@if (workDays == null)
+{
+    <p>Načítám...</p>
+}
+else
+{
+    <table class="table table-striped table-bordered shadow-lg bg-light ms-2 me-2 rounded table-hover table-responsive table-sm">
+        <thead>
+            <tr class="text-center ms-2 text-bg-info">
+                <th class="px-2">Den <span class="fa fa-clone"></span> Datum</th>
+                <th class="px-2">Začátek <span class="fa fa-sign-in"></span></th>
+                <th class="px-2">Konec <span class="fa fa-sign-out"></span></th>
+                <th class="px-2">Přestávka <span class="fa fa-clock-o"></span></th>
+                <th class="px-2">Typ <span class="fa fa-tag"></span></th>
+                <th class="px-2">Celkem <span class="fa fa-legal"></span></th>
+                <th class="px-2">Úpravy <span class="fa fa-edit"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var day in workDays)
+            {
+                <tr class="text-center ms-2 text-bg-secondary">
+                    <td class="px-2">@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek))  @day.Date.ToString("d")</td>
+                    <td class="px-2">@day.StartTime</td>
+                    <td class="px-2">@day.EndTime</td>
+                    <td class="px-2">@day.Break</td>
+                    <td class="px-2">@day.Type</td>
+                    <td class="px-2">@day.TotalHours</td>
+                    <td>
+                        <a class="btn btn-info btn-sm" href="/edit/@day.WorkDayId"><span class="fa fa-edit"></span></a>
+                        <a class="btn btn-success btn-sm" href="/detail/@day.WorkDayId"><span class="fa fa-info-circle"></span></a>
+                        <a class="btn btn-danger btn-sm" href="/delete/@day.WorkDayId"><span class="fa fa-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<WorkDayDto>? workDays;
+    private string? logMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Zjisti skutečnou adresu, na kterou se dotazuješ
+        var requestUrl = new Uri(Http.BaseAddress!, "api/workday").ToString();
+        logMessage = $"Načítám data z: {requestUrl}";
+
+        workDays = await Http.GetFromJsonAsync<List<WorkDayDto>>("api/workday");
+        if (workDays != null)
+        {
+            workDays = workDays.OrderBy(d => d.Date).ToList();
+        }
+        else
+        {
+            logMessage += "<br/>Chyba: Data se nepodařilo načíst nebo deserializovat.";
+        }
+    }
+}

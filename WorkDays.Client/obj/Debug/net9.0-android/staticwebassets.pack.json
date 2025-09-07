@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\WorkDays.Client.styles.css",
+      "PackagePath": "staticwebassets\\WorkDays.Client.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\css\\WorkDays.Client.styles.css",
+      "PackagePath": "staticwebassets\\css\\WorkDays.Client.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.WorkDays.Client.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.WorkDays.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.build.WorkDays.Client.props",
+      "PackagePath": "build\\WorkDays.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildMultiTargeting.WorkDays.Client.props",
+      "PackagePath": "buildMultiTargeting\\WorkDays.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildTransitive.WorkDays.Client.props",
+      "PackagePath": "buildTransitive\\WorkDays.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
