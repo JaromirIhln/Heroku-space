@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("63989696-93f0-4207-ad8d-a283f23b79cd")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38be4c5039f8ebaa57f6b22fb335920609946c4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
