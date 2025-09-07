@@ -21,9 +21,9 @@ C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.Generat
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.AssemblyInfoInputs.cache
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.AssemblyInfo.cs
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.csproj.CoreCompileInputs.cache
+C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.sourcelink.json
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.dll
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\refint\WorkDays.Data.dll
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.pdb
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.genruntimeconfig.cache
 C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\ref\WorkDays.Data.dll
-C:\Users\battl\Heroku-space\WorkDays.Data\obj\Debug\net9.0\WorkDays.Data.sourcelink.json

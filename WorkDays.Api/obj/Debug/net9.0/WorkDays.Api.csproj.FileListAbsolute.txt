@@ -257,6 +257,7 @@ C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.AssemblyI
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.AssemblyInfo.cs
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.csproj.CoreCompileInputs.cache
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.sourcelink.json
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\scopedcss\bundle\WorkDays.Api.styles.css
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\staticwebassets.build.json.cache
@@ -268,4 +269,3 @@ C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\refint\WorkDays.Api.dl
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.pdb
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.genruntimeconfig.cache
 C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\ref\WorkDays.Api.dll
-C:\Users\battl\Heroku-space\WorkDays.Api\obj\Debug\net9.0\WorkDays.Api.sourcelink.json
