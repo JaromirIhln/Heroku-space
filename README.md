@@ -119,11 +119,19 @@ V `Program.cs` v projektu `WorkDays.Api` přidejte konfiguraci DbContextu:
 ## Na co si dát pozor
 
 - **Design-time soubor pro migrace**
-  - Pro správné fungování EF Core migrací je nutné mít `AppDbContextFactory` v projektu, který načítá konfiguraci (connection string) i mimo běh aplikace.
+  - Pro správné fungování EF Core migrací je dobré mít `AppDbContextFactory` v projektu, který načítá konfiguraci (connection string) i mimo běh aplikace.
   - Pokud měníš umístění `appsettings.json`, uprav i `SetBasePath` v tomto souboru.
 
 - **Migrace a práce s databází**
-  - Migrace spouštěj přes `dotnet ef migrations add <NázevMigrace>` a `dotnet ef database update` vždy ve správném projektu (většinou `WorkDays.Data`).
+  - Migrace spouštěj přes `dotnet ef migrations add <NázevMigrace>` a `dotnet ef database update` - * Globální příkazy dotnet - nutno instalovat*
+    vždy ve správném projektu (většinou `WorkDays.Data`) - `dotnet cd WorkDays.Data`.
+  - PM package manager ve VS2022
+    ```cli
+    dotnet add-migration InitialCreate
+    // následně pokud je vše v pořádku
+    dotnet update-database
+    ```
+
   - Pokud narazíš na chybu s `DateTimeKind`, zkontroluj, že všechny `DateTime` hodnoty jsou v UTC (ideálně s `Z` v JSONu).
   - Pro typy času používej v modelech `TimeOnly` (ne `DateTime`), v JSONu pak formát `"HH:mm:ss"`.
   - Enumy mapuj na string v DTO, v DB může být int.
@@ -135,7 +143,7 @@ V `Program.cs` v projektu `WorkDays.Api` přidejte konfiguraci DbContextu:
 - **Testování API**
   - Pro testování používej `.http` soubor nebo nástroje jako Postman/Thunder Client.
   - Vždy ověř, že formát dat odpovídá očekávaným typům v backendu.
-
+  - Pokud nechceš přidávat zbatečně balíčky, tak nejvhodnější volba je `[jméno-projektu].http`
 - **Connection string a konfigurace**
   - Pro lokální vývoj používej User Secrets nebo `appsettings.Development.json`.
   - Pro produkci (např. Heroku) nastav connection string přes proměnné prostředí.
@@ -287,6 +295,25 @@ GET {{WorkDays.Api_Http_HostAddress}}/api/workday
 
 ###
 DELETE {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
-```
+    ```
+---
 
 1. Otevři tento soubor ve VS Code a použij tlačítko "Send Request" nad jednotlivými HTTP požadavky pro jejich odeslání.
+2. Až budeš mít otestovány všechny endpoity, pak tvá aplikace je připravena na nasazení na HEROKU - snadné a automatizované
+
+## Nasazení na HEROKU
+
+- Jelikož používám skutečnou(fyzickou Db) - PostgreSQL, tak jsem nemusel přidávat do projektu žádné Add-Ons
+  jako je právě PostgreSql na AWS
+- Nasazení je snadné:
+    1. Craete New projekt
+        1a. [your-unique-app-name]
+        2b. Add pipeline => Create a 'New pipe-line'
+            - zvolte vhodný a výstižný název pro svou službu
+            - projekt nahrajte na git, aby jste ho mohli propojit
+    2. Musíte mít naistalované `Heroku Cli` - na vše vás průvoce navede
+        - projekt nahrajte na git, aby jste ho mohli propojit
+    3. Nastavte automatické buildy při každém pull requestu
+       - znamená to, že po každé změně se váš projekt znovu sestavý
+- Nyní se spustí Váš první Deploy na Heroku a  na konci na Vás čeká adresa,
+   na  které běží Váš backend 
