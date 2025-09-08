@@ -295,7 +295,7 @@ GET {{WorkDays.Api_Http_HostAddress}}/api/workday
 
 ###
 DELETE {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
-    ```
+```
 ---
 
 1. Otevři tento soubor ve VS Code a použij tlačítko "Send Request" nad jednotlivými HTTP požadavky pro jejich odeslání.
