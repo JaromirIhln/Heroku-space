@@ -16,8 +16,6 @@
       <Integrity>bhCZyC/yM2+DaFXr8z25+5MeWfXWqMJNNA4ZLAXbjjU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>3376</FileLength>
-      <LastWriteTime>Sat, 06 Sep 2025 20:12:34 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css'))">
@@ -36,8 +34,6 @@
       <Integrity>2FMn2Zx6PuH5tdBQDRNwrOo60ts5wWPC9R8jK67b3t4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>232111</FileLength>
-      <LastWriteTime>Sun, 31 Aug 2025 21:04:02 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css.map'))">
@@ -56,8 +52,6 @@
       <Integrity>SBRPr2qg+zzSznSNlzAjj4iPSrcV8F2r0cmvLFZxmIo=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>590038</FileLength>
-      <LastWriteTime>Sun, 31 Aug 2025 21:04:03 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap.min.css.map'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\WorkDays.Client.styles.css'))">
@@ -76,8 +70,6 @@
       <Integrity>BQEbKzNthWhV6J6Cq5zF3zgV2Tcyx42XJhyZUYrW7mc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>844</FileLength>
-      <LastWriteTime>Sun, 07 Sep 2025 00:05:45 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\WorkDays.Client.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))">
@@ -92,12 +84,10 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>u40ztyry0t</Fingerprint>
-      <Integrity>biCpHyt2QMY/l/I/8ipbBWkcl43s2tlOOvcm9SQiWM0=</Integrity>
+      <Fingerprint>r21birr9yv</Fingerprint>
+      <Integrity>M2gJFutlNHcttL2QiDAEH5DIivRg8feu5+bARE8o6mk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>1025</FileLength>
-      <LastWriteTime>Sun, 07 Sep 2025 00:06:39 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js'))">
@@ -116,8 +106,6 @@
       <Integrity>ew8UiV1pJH/YjpOEBInP1HxVvT/SfrCmwSoUzF9JIgc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>60539</FileLength>
-      <LastWriteTime>Sun, 31 Aug 2025 21:04:03 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js.map'))">
@@ -136,9 +124,25 @@
       <Integrity>UrA9jZWcpT1pwfNME+YkIIDJrMu+AjfIKTSfd3ODwMs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>220618</FileLength>
-      <LastWriteTime>Sun, 31 Aug 2025 21:04:03 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\bootstrap.min.js.map'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\initBootstrap.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WorkDays.Client</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>js/initBootstrap.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ga9lxqmyz2</Fingerprint>
+      <Integrity>SGsc72ftGtgXv8LHQ4kV9X3Y8Lo8V02r3pwTrRyciC0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\initBootstrap.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\WorkDays.Client.styles.css'))">
       <SourceType>Package</SourceType>
@@ -156,8 +160,6 @@
       <Integrity>4nGKNAUo7Ri7i2lEK7tPsTaDddqSNTHymPEg/k3moms=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>54</FileLength>
-      <LastWriteTime>Sun, 07 Sep 2025 19:34:51 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\WorkDays.Client.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

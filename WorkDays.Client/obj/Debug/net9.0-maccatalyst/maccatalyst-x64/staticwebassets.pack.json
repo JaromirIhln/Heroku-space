@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\initBootstrap.js",
+      "PackagePath": "staticwebassets\\js\\initBootstrap.js"
+    },
+    {
       "Id": "obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.WorkDays.Client.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

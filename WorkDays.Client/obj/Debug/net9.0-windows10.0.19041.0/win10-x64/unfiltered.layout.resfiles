@@ -1,3 +1,4 @@
+runtimes\win-x64\native\WebView2Loader.dll
 Components\Layout\MainLayout.razor.css
 wwwroot\css\WorkDays.Client.styles.css.gz
 wwwroot\js\bootstrap.min.js.gz
@@ -12,10 +13,12 @@ wwwroot\js\bootstrap.min.js.map.br
 wwwroot\css\bootstrap.min.css.br
 wwwroot\WorkDays.Client.styles.css.br
 wwwroot\css\bootstrap.min.css.map.br
+wwwroot\js\initBootstrap.js.br
 wwwroot\index.html.br
 wwwroot\css\bootstrap.min.css.gz
 wwwroot\WorkDays.Client.styles.css.gz
 wwwroot\css\bootstrap.min.css.map.gz
+wwwroot\js\initBootstrap.js.gz
 wwwroot\index.html.gz
 OpenSans-Regular.ttf
 appicon.ico
@@ -84,3 +87,4 @@ wwwroot\css\WorkDays.Client.styles.css
 wwwroot\index.html
 wwwroot\js\bootstrap.min.js
 wwwroot\js\bootstrap.min.js.map
+wwwroot\js\initBootstrap.js

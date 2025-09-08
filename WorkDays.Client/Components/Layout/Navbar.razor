@@ -1,0 +1,59 @@
+
+@inject IJSRuntime JS
+
+@code {
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await JS.InvokeVoidAsync("initBootstrapDropdowns");
+    }
+  }
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="#">Kalendář  <span class="fa fa-calendar-check-o"></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"><span class="fa fa-home"></span> Domů </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/home"><span class="fa fa-info-circle"></span> O aplikaci </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nabídka 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">ÚKOLY</a> <span class="fa fa-tasks"></span></li>
+            <li><a class="dropdown-item" href="#">POZNÁMKY</a> <span class="fa fa-sticky-note"></span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">NÁKUPY</a> <span class="fa fa-shopping-cart"></span></li>
+          </ul>
+        </li>
+      </ul>
+    <form class="d-flex" onsubmit="return false;">
+    <input id="global-search" class="form-control me-2" type="search" placeholder="Hledat" aria-label="Search" @oninput="OnNavSearchChanged" />
+    <button class="btn btn-outline-success" type="submit" tabindex="-1" style="display:none;">Hledat</button>
+    </form>
+
+@code {
+  [Parameter]
+  public EventCallback<string> OnSearchChanged { get; set; }
+
+  private async Task OnNavSearchChanged(ChangeEventArgs e)
+  {
+    if (OnSearchChanged.HasDelegate)
+    {
+      await OnSearchChanged.InvokeAsync(e.Value?.ToString() ?? "");
+    }
+  }
+}
+    </div>
+  </div>
+</nav>

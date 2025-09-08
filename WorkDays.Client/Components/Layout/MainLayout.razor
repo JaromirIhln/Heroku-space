@@ -1,3 +1,17 @@
-﻿@inherits LayoutComponentBase
+﻿@using WorkDays.Client.Components.Pages
+@using WorkDays.Client.Models
+@using WorkDays.Client
 
-@Body
+@inherits LayoutComponentBase
+
+
+@code {
+	private string globalSearch = string.Empty;
+	private void HandleGlobalSearch(string value) => globalSearch = value;
+}
+
+<CascadingValue Value="globalSearch">
+	<Navbar OnSearchChanged="HandleGlobalSearch" />
+	@Body
+</CascadingValue>
+

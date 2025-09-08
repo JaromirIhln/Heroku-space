@@ -25,12 +25,24 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
+    },
+    {
       "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },
     {
       "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\wwwroot\\js\\initBootstrap.js",
+      "PackagePath": "staticwebassets\\js\\initBootstrap.js"
     },
     {
       "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.WorkDays.Client.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
