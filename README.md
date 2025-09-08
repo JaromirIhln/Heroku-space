@@ -296,6 +296,7 @@ GET {{WorkDays.Api_Http_HostAddress}}/api/workday
 ###
 DELETE {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
 ```
+
 ---
 
 1. Otevři tento soubor ve VS Code a použij tlačítko "Send Request" nad jednotlivými HTTP požadavky pro jejich odeslání.
@@ -316,4 +317,4 @@ DELETE {{WorkDays.Api_Http_HostAddress}}/api/workday/{{id}}
     3. Nastavte automatické buildy při každém pull requestu
        - znamená to, že po každé změně se váš projekt znovu sestavý
 - Nyní se spustí Váš první Deploy na Heroku a  na konci na Vás čeká adresa,
-   na  které běží Váš backend 
+   na  které běží Váš backend
