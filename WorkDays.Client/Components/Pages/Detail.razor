@@ -2,7 +2,7 @@
 @using WorkDays.Client.Models
 @inject HttpClient Http
 
-<h3>Detail</h3>
+<h3 class="text-center text-info">Detail dne:</h3>
 
 @code {
     [Parameter]
@@ -21,7 +21,7 @@
 }
 else
 {
-    <div class="card">
+    <div class="card shadow-lg bg-body mb-3">
         <div class="card-body bg-light">
             <h5 class="card-title">@workDay.Date.ToString("D")</h5>
             <p class="card-text"><strong>Začátek:</strong> @workDay.StartTime</p>
@@ -30,9 +30,10 @@ else
             <p class="card-text"><strong>Typ:</strong> @workDay.Type</p>
             <p class="card-text"><strong>Je svátek:</strong> @(workDay.IsHoliday ? "Ano" : "Ne")</p>
             <p class="card-text"><strong>Celkem hodin:</strong> @workDay.TotalHours</p>
-            <a class="btn btn-success" href="/edit/@workDay.WorkDayId">Upravit</a>
-            <a class="btn btn-secondary" href="/">Zpět na seznam</a>
-            <a class="btn btn-primary" href="/">Zrušit</a>
+            <a class="btn btn-success" href="/edit/@workDay.WorkDayId"><span class="fa fa-edit"></span> Upravit</a>
+            <a class="btn btn-secondary" href="/"><span class="fa fa-arrow-left"></span> Zpět</a>
+            <a class="btn btn-primary" href="/"><span class="fa fa-times"></span> Zrušit</a>
+            <a class="btn btn-danger" href="/delete/@workDay.WorkDayId"><span class="fa fa-trash"></span> Smazat</a>
         </div>
     </div>
 }

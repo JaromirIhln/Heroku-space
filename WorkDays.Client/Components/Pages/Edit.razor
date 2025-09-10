@@ -3,7 +3,7 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
-<h3>Editace pracovního dne</h3>
+<h3>Upravit pracovní den</h3>
 
 @if (isLoading)
 {
@@ -24,15 +24,42 @@ else
 		</div>
 		<div class="mb-2">
 			<label>Začátek:</label>
-			<InputText @bind-Value="startTimeString" class="form-control" placeholder="HH:mm" />
+			<input list="startTimes" @bind="startTimeString" class="form-control" placeholder="HH:mm" />
+			<datalist id="startTimes">
+				
+				<option value="7:40" />
+				<option value="8:00" />
+				<option value="8:30" />
+				<option value="9:00" />
+				<option value="9:30" />
+				<option value="10:00" />
+				<option value="10:30" />
+				<option value="11:00" />
+				<option value="12:00" />
+			</datalist>
 		</div>
 		<div class="mb-2">
 			<label>Konec:</label>
-			<InputText @bind-Value="endTimeString" class="form-control" placeholder="HH:mm" />
+			<input list="endTimes" @bind="endTimeString" class="form-control" placeholder="HH:mm" />
+			<datalist id="endTimes">
+				<option value="14:00" />
+				<option value="15:00" />
+				<option value="15:30" />
+				<option value="16:00" />
+				<option value="17:00" />
+				<option value="18:00" />
+				<option value="18:30" />
+			</datalist>
 		</div>
 		<div class="mb-2">
 			<label>Přestávka:</label>
-			<InputText @bind-Value="breakString" class="form-control" placeholder="HH:mm" />
+			<input list="breakTimes" @bind="breakString" class="form-control" placeholder="HH:mm" />
+			<datalist id="breakTimes">
+				<option value="0:00" />
+				<option value="0:10" />
+				<option value="0:20" />
+				<option value="0:30" />
+			</datalist>
 		</div>
 		<div class="mb-2">
 			<label>Typ:</label>

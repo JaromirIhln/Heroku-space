@@ -42,9 +42,9 @@ else
             <p class="card-text"><strong>Typ:</strong> @workDay.Type</p>
             <p class="card-text"><strong>Je svátek:</strong> @(workDay.IsHoliday ? "Ano" : "Ne")</p>
             <p class="card-text"><strong>Celkem hodin:</strong> @workDay.TotalHours</p>
-            <button class="btn btn-danger" @onclick="DeleteWorkDay">Smazat</button>
-            <a class="btn btn-secondary" href="/">Zpět na seznam</a>
-            <a class="btn btn-primary" href="/detail/@Id">Zrušit</a>
+            <button class="btn btn-danger" @onclick="DeleteWorkDay"><span class="fa fa-trash"></span> Smazat</button>
+            <a class="btn btn-secondary" href="/"><span class="fa fa-arrow-left"></span> Zpět</a>
+            <a class="btn btn-primary" href="/detail/@Id"><span class="fa fa-times"></span> Zrušit</a>
         </div>
     </div>
 }
