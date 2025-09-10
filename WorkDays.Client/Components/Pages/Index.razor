@@ -37,7 +37,15 @@ else
         <tbody>
             @foreach (var day in FilteredWeekDays)
             {
-                <tr class="text-center ms-2 text-bg-secondary clickable-row" style="cursor:pointer;" @onclick="@(() => GoToDetail(day.WorkDayId))">
+                var isWeekend = day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday;
+                var isHoliday = day.IsHoliday;
+                var rowClass = isHoliday
+                    ? "table-danger"
+                    : isWeekend
+                        ? "table-warning"
+                        : "text-bg-info";
+
+                <tr class="text-center ms-2 @rowClass clickable-row" style="cursor:pointer;" @onclick="@(() => GoToDetail(day.WorkDayId))">
                     <td class="px-2">@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek))  @day.Date.ToString("d")</td>
                     <td class="px-2"><span class="badge bg-primary">@day.StartTime</span></td>
                     <td class="px-2"><span class="badge bg-success">@day.EndTime</span></td>
