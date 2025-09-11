@@ -25,6 +25,17 @@ a, .btn-link {
 h1:focus {
     outline: none;
 }
+.icon-color-primary{
+    color: #1b6ec2;
+}
+
+.icon-color-primary:hover {
+        color: #12263b;
+}
+
+.icon-color-danger {
+    color: #db3d3d;
+}
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;

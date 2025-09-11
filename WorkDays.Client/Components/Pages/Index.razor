@@ -16,16 +16,17 @@
 @if (!string.IsNullOrEmpty(logMessage))
 {
     <div class="alert alert-info ms-2 me-2">
-       <p>@logMessage</p>
+        <p>@logMessage</p>
+        <i class="fa fa-spinner fa-spin" ></i>
     </div>
 }
 @if (workDays == null)
 {
-    <p>Načítám...</p>
+    <i class="fa fa-spinner fa-spin style="font-size:32px""></i>
 }
 else
 {
-    <table class="table table-striped table-bordered shadow-lg bg-light ms-2 me-2 rounded table-hover table-responsive table-sm">
+    <table class="table table-striped table-success table-bordered shadow-lg bg-light ms-2 me-2 rounded table-hover table-responsive table-sm">
         <thead>
             <tr class="text-center ms-2 text-bg-info">
                 <th class="px-2">Den</th>
@@ -43,7 +44,7 @@ else
                     ? "table-danger"
                     : isWeekend
                         ? "table-warning"
-                        : "text-bg-info";
+                        : "table-info";
 
                 <tr class="text-center ms-2 @rowClass clickable-row" style="cursor:pointer;" @onclick="@(() => GoToDetail(day.WorkDayId))">
                     <td class="px-2">@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek))  @day.Date.ToString("d")</td>
@@ -103,7 +104,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         var requestUrl = new Uri(Http.BaseAddress!, "api/workday").ToString();
-        logMessage = $"Načítám data z:\n {requestUrl}";
+        logMessage = $"Awakening: {requestUrl}";
 
         workDays = await Http.GetFromJsonAsync<List<WorkDayDto>>("api/workday");
         if (workDays != null)

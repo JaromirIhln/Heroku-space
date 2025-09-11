@@ -3,11 +3,13 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
-<h3>Upravit pracovní den</h3>
+<h3 class="">Upravit den</h3>
 
 @if (isLoading)
 {
 	<p>Načítám...</p>
+
+	<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
 }
 else if (workDay == null)
 {
@@ -24,9 +26,8 @@ else
 		</div>
 		<div class="mb-2">
 			<label>Začátek:</label>
-			<input list="startTimes" @bind="startTimeString" class="form-control" placeholder="HH:mm" />
-			<datalist id="startTimes">
-				
+			<input list="startTimes" @bind="startTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
+			<datalist id="startTimes">	
 				<option value="7:40" />
 				<option value="8:00" />
 				<option value="8:30" />
@@ -40,7 +41,7 @@ else
 		</div>
 		<div class="mb-2">
 			<label>Konec:</label>
-			<input list="endTimes" @bind="endTimeString" class="form-control" placeholder="HH:mm" />
+			<input list="endTimes" @bind="endTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
 			<datalist id="endTimes">
 				<option value="14:00" />
 				<option value="15:00" />
@@ -53,7 +54,7 @@ else
 		</div>
 		<div class="mb-2">
 			<label>Přestávka:</label>
-			<input list="breakTimes" @bind="breakString" class="form-control" placeholder="HH:mm" />
+			<input list="breakTimes" @bind="breakString" class="form-control text-bg-info" placeholder="HH:mm" />
 			<datalist id="breakTimes">
 				<option value="0:00" />
 				<option value="0:10" />
@@ -63,7 +64,7 @@ else
 		</div>
 		<div class="mb-2">
 			<label>Typ:</label>
-			<InputSelect @bind-Value="workDay.Type" class="form-control">
+			<InputSelect @bind-Value="workDay.Type" class="form-control text-bg-info">
 				@foreach (var type in Enum.GetValues<DayType>())
 				{
 					<option value="@type">@type</option>
@@ -71,7 +72,7 @@ else
 			</InputSelect>
 		</div>
 		<div class="mb-2">
-			<label>Je svátek:</label>
+			<label>Volno:</label>
 			<InputCheckbox @bind-Value="workDay.IsHoliday" />
 		</div>
 		<button type="submit" class="btn btn-primary">Uložit změny</button>

@@ -2,28 +2,18 @@
 @using WorkDays.Client.Models
 @inject HttpClient Http
 
-<h3 class="text-center text-info">Detail dne:</h3>
+<h3 class="text-center text-info">Podrobnosti :</h3>
 
-@code {
-    [Parameter]
-    public int Id { get; set; }
-
-    private WorkDayDto? workDay;
-
-    protected override async Task OnInitializedAsync()
-    {
-        workDay = await Http.GetFromJsonAsync<WorkDayDto>($"api/workday/{Id}");
-    }
-}
 @if (workDay == null)
 {
     <p>Načítám...</p>
+    <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
 }
 else
 {
     <div class="card shadow-lg bg-body mb-3">
         <div class="card-body bg-light">
-            <h5 class="card-title">@workDay.Date.ToString("D")</h5>
+            <h5 class="card-title text-bg-primary text-center">@workDay.Date.ToString("D")</h5>
             <p class="card-text"><strong>Začátek:</strong> @workDay.StartTime</p>
             <p class="card-text"><strong>Konec:</strong> @workDay.EndTime</p>
             <p class="card-text"><strong>Přestávka:</strong> @workDay.Break</p>
@@ -36,4 +26,16 @@ else
             <a class="btn btn-danger" href="/delete/@workDay.WorkDayId"><span class="fa fa-trash"></span> Smazat</a>
         </div>
     </div>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private WorkDayDto? workDay;
+
+    protected override async Task OnInitializedAsync()
+    {
+        workDay = await Http.GetFromJsonAsync<WorkDayDto>($"api/workday/{Id}");
+    }
 }

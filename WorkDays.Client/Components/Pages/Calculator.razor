@@ -1,0 +1,81 @@
+﻿@page "/calculator"
+
+<title>Calculator</title>
+<h3 class="text-center text-bg-primary">Kalkulačka</h3>
+
+<div class="calculator-box p-3 ms-2 rounded shadow" style="max-width:320px;">
+    <input @bind="expression" class="form-control mb-2 text-end" placeholder="Zadej výraz" readonly />
+
+    <div class="row g-1 mb-1 ms-1 me-1">
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('7')">7</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('8')">8</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('9')">9</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('/')">/</button>
+    </div>
+    <div class="row g-1 mb-1 ms-1 me-1">
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('4')">4</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('5')">5</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('6')">6</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('*')">*</button>
+    </div>
+    <div class="row g-1 mb-1 ms-1 me-1">
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('1')">1</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('2')">2</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('3')">3</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('-')">-</button>
+    </div>
+    <div class="row g-1 mb-1 ms-1 me-1">
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('0')">0</button>
+        <button class="btn btn-secondary col px-1 ms-1 me-1" @onclick="() => Add('.')">.</button>
+        <button class="btn btn-danger col px-1 ms-1 me-1" @onclick="Clear">C</button>
+        <button class="btn btn-warning col px-1 ms-1 me-1" @onclick="() => Add('+')">+</button>
+    </div>
+    <div class="row g-1">
+        <button class="btn btn-success col-12" @onclick="Evaluate">=</button>
+    </div>
+
+    @if (result is not null)
+    {
+        <div class="alert alert-info mt-2">Výsledek: <b>@result</b></div>
+    }
+    @if (error is not null)
+    {
+        <div class="alert alert-danger mt-2">@error</div>
+    }
+</div>
+
+@code {
+    private string expression = "";
+    private string? result;
+    private string? error;
+
+    private void Add(char value)
+    {
+        error = null;
+        result = null;
+        expression += value.ToString();
+    }
+
+    private void Clear()
+    {
+        expression = "";
+        result = null;
+        error = null;
+    }
+
+    private void Evaluate()
+    {
+        error = null;
+        try
+        {
+            var dt = new System.Data.DataTable();
+            var value = dt.Compute(expression, "");
+            result = value?.ToString();
+        }
+        catch
+        {
+            result = null;
+            error = "Neplatný výraz!";
+        }
+    }
+}

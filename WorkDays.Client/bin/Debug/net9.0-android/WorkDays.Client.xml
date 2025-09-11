@@ -4,6 +4,54 @@
         <name>WorkDays.Client</name>
     </assembly>
     <members>
+        <member name="T:WorkDays.Client.Models.WorkDayDto">
+            <summary>
+            Represents a workday with details such as date, working hours, break duration, and type of day.
+            </summary>
+            <remarks>This data transfer object (DTO) is used to encapsulate information about a single workday, 
+            including its unique identifier, start and end times, break duration, and whether it is a holiday. It also
+            includes the total hours worked and the type of day (e.g., regular, holiday, etc.).</remarks>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.WorkDayId">
+            <summary>
+            Gets or sets the unique identifier for the workday.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.Date">
+            <summary>
+            Gets or sets the date associated with this instance.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.StartTime">
+            <summary>
+            Gets or sets the start time of the event.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.EndTime">
+            <summary>
+            Gets or sets the end time of the event or operation.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.Break">
+            <summary>
+            Gets or sets the time at which the break occurs.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.IsHoliday">
+            <summary>
+            Gets or sets a value indicating whether the current date is a holiday.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.Type">
+            <summary>
+            Gets or sets the type of day represented by this instance.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.TotalHours">
+            <summary>
+            Gets or sets the total hours represented as a <see cref="T:System.TimeOnly"/> value.
+            </summary>
+        </member>
         <member name="T:WorkDays.Client.Resource">
             <summary>
             Android Resource Designer class.
