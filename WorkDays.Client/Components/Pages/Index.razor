@@ -2,7 +2,6 @@
 @using WorkDays.Client.Models
 @using System.Linq
 @inject HttpClient Http
-
 <!-- Navbar přesunut do Layoutu -->
 
 <div class="d-flex justify-content-between align-items-center shadow-lg p-2 mb-2 mt-2 bg-body rounded ms-2 me-2">
@@ -13,8 +12,14 @@
 <div class="mb-3 d-flex align-items-center justify-content-between ms-2 me-2">
     <a class="btn btn-success btn-sm shadow p-2 mt-2 rounded me-3" href="/create">Nový <span class="fa fa-calendar-plus-o"></span></a>
     <div class="d-flex align-items-center">
-        <input type="date" @bind="selectedDate" @bind:event="onchange" class="form-control form-control-sm me-2" style="max-width:150px;" />
-        <button class="btn btn-primary btn-sm" @onclick="GoToSelectedDate"><span class="fa fa-calendar"></span></button>
+        <input type="date"
+               value="@selectedDate.ToString("yyyy-MM-dd")"
+               @onchange="OnDatePicked"
+               class="form-control" />
+
+        <button class="btn btn-primary btn-sm">
+        <span class="fa fa-calendar"></span>
+    </button>
     </div>
 </div>
 @if (workDays == null)
@@ -97,7 +102,7 @@ else
         NavigationManager.NavigateTo($"/detail/{workDayId}");
     }
 
-    private void GoToSelectedDate()
+    private async Task GoToSelectedDate(ChangeEventArgs? e = null)
     {
         // Najdi WorkDay pro vybrané datum
         var selectedWorkDay = workDays?.FirstOrDefault(d => d.Date.Date == selectedDate.Date);
@@ -110,6 +115,19 @@ else
             // Pokud pro dané datum není WorkDay, přejdi na týden obsahující to datum
             var daysDiff = (selectedDate - DateTime.Today).Days;
             weekOffset = daysDiff / 7;
+            StateHasChanged();
+        }
+    }
+
+    [Parameter] public DateTime Value { get; set; }
+    [Parameter] public EventCallback<DateTime> ValueChanged { get; set; }
+
+    private async Task OnDatePicked(ChangeEventArgs e)
+    {
+        if (DateTime.TryParse(e.Value?.ToString(), out var date))
+        {
+            selectedDate = date;
+            await GoToSelectedDate();
         }
     }
 

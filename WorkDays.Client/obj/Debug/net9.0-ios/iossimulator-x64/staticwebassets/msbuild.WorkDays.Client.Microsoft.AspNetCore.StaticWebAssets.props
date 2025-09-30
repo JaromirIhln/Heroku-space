@@ -217,7 +217,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>54</FileLength>
-      <LastWriteTime>Thu, 11 Sep 2025 22:49:48 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 30 Sep 2025 21:45:18 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\WorkDays.Client.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
