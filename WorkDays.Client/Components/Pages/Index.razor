@@ -10,19 +10,16 @@
     <h3 class="text-center m-0">@CurrentMonthName <span class="ms-3 fa fa-calendar"></span></h3>
     <button class="btn btn-outline-secondary btn-sm" @onclick="ShowNextWeek"><span class="fa fa-chevron-right"></span></button>
 </div>
-<div class="mb-3 d-flex align-items-center ms-2 me-2">
+<div class="mb-3 d-flex align-items-center justify-content-between ms-2 me-2">
     <a class="btn btn-success btn-sm shadow p-2 mt-2 rounded me-3" href="/create">Nový <span class="fa fa-calendar-plus-o"></span></a>
-</div>
-@if (!string.IsNullOrEmpty(logMessage))
-{
-    <div class="alert alert-info ms-2 me-2">
-        <p>@logMessage</p>
-        <i class="fa fa-spinner fa-spin" ></i>
+    <div class="d-flex align-items-center">
+        <input type="date" @bind="selectedDate" @bind:event="onchange" class="form-control form-control-sm me-2" style="max-width:150px;" />
+        <button class="btn btn-primary btn-sm" @onclick="GoToSelectedDate"><span class="fa fa-calendar"></span></button>
     </div>
-}
+</div>
 @if (workDays == null)
 {
-    <i class="fa fa-spinner fa-spin style="font-size:32px""></i>
+    <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
 }
 else
 {
@@ -90,12 +87,30 @@ else
     private string CurrentMonthName =>
         System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(StartOfWeek.Month) + " " + StartOfWeek.Year;
 
+    private DateTime selectedDate = DateTime.Today;
+
     private void ShowPreviousWeek() { weekOffset--; }
     private void ShowNextWeek() { weekOffset++; }
 
     private void GoToDetail(int workDayId)
     {
         NavigationManager.NavigateTo($"/detail/{workDayId}");
+    }
+
+    private void GoToSelectedDate()
+    {
+        // Najdi WorkDay pro vybrané datum
+        var selectedWorkDay = workDays?.FirstOrDefault(d => d.Date.Date == selectedDate.Date);
+        if (selectedWorkDay != null)
+        {
+            NavigationManager.NavigateTo($"/detail/{selectedWorkDay.WorkDayId}");
+        }
+        else
+        {
+            // Pokud pro dané datum není WorkDay, přejdi na týden obsahující to datum
+            var daysDiff = (selectedDate - DateTime.Today).Days;
+            weekOffset = daysDiff / 7;
+        }
     }
 
     [Inject]
