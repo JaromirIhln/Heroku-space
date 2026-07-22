@@ -11,6 +11,7 @@
     <h3 class="text-center m-0">@CurrentMonthName <span class="ms-3 fa fa-calendar"></span></h3>
     <button class="btn btn-outline-secondary btn-sm" @onclick="ShowNextWeek"><span class="fa fa-chevron-right"></span></button>
 </div>
+
 <div class="mb-3 d-flex align-items-center justify-content-between ms-2 me-2">
     <a class="btn btn-success btn-sm shadow p-2 mt-2 rounded me-3" href="/create">Nový <span class="fa fa-calendar-plus-o"></span></a>
     <div class="d-flex align-items-center">
@@ -20,10 +21,11 @@
                class="form-control" />
 
         <button class="btn btn-primary btn-sm">
-        <span class="fa fa-calendar" style="font-size:large;"></span>
-    </button>
+            <span class="fa fa-calendar" style="font-size:large;"></span>
+        </button>
     </div>
 </div>
+
 @if (workDays == null)
 {
     <i class="fa fa-spinner fa-spin" style="font-size:32px"></i>
@@ -34,10 +36,9 @@ else
         <thead>
             <tr class="text-center ms-2 text-bg-info">
                 <th class="px-2">Den</th>
-                <th class="px-2">Začátek</th>
-                <th class="px-2">Konec</th>
+                <th class="px-2">Čas</th>
                 <th class="px-2">Celkem</th>
-                <th class="px-2">Oddělení</th> <!-- NOVÝ SLOUPEC -->
+                <th class="px-2">Odd.</th> <!-- ZKRÁCENÝ NÁZEV PRO MOBIL -->
             </tr>
         </thead>
         <tbody>
@@ -52,20 +53,28 @@ else
                         : "table-info";
 
                 <tr class="text-center ms-2 @rowClass clickable-row" style="cursor:pointer;" @onclick="@(() => GoToDetail(day.WorkDayId))">
-                    <td class="px-2">@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek))  @day.Date.ToString("d")</td>
-                    <td class="px-2"><span class="badge bg-primary">@day.StartTime</span></td>
-                    <td class="px-2"><span class="badge bg-success">@day.EndTime</span></td>
-                    <td class="px-2">               
-                        <span class="badge bg-info text-dark">@day.TotalHours</span><br />
-                        <span class="badge bg-info text-bg-dark">@day.Break</span>
+                    <td class="px-1 small">
+                        <strong>@day.Date.ToString("d")</strong><br/>
+                        <small>@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek).Substring(0, 2))</small>
                     </td>
-                    <td class="px-2"> <!-- NOVÝ SLOUPEC PRO ODDĚLENÍ -->
+                    <td class="px-1 small">
+                        <span class="badge bg-primary">@day.StartTime.ToString("HH:mm")</span><br/>
+                        <span class="badge bg-success">@day.EndTime.ToString("HH:mm")</span>
+                    </td>
+                    <td class="px-1 small">               
+                        <span class="badge bg-info text-dark">@day.TotalHours.ToString("HH:mm")</span><br />
+                        <span class="badge bg-secondary">@day.Break.ToString("HH:mm")</span>
+                    </td>
+                    <td class="px-1"> <!-- NOVÝ SLOUPEC PRO ODDĚLENÍ -->
                         @if (day.Department != Department.None)
                         {
                             <span class="badge @DepartmentHelper.GetBadgeClass(day.Department) @DepartmentHelper.GetTextClass(day.Department)">
                                 <i class="@DepartmentHelper.GetIconClass(day.Department)"></i>
-                                @DepartmentHelper.GetDisplayName(day.Department)
                             </span>
+                        }
+                        else
+                        {
+                            <span class="text-muted small">-</span>
                         }
                     </td>
                 </tr>
@@ -73,14 +82,11 @@ else
         </tbody>
     </table>
 }
+
 @code {
     private List<WorkDayDto>? workDays;
     private string? logMessage;
-
-
-    private int weekOffset = 0; // 0 = aktuální týden, -1 = předchozí, +1 = další
-
-
+    private int weekOffset = 0;
 
     [CascadingParameter]
     public string? globalSearch { get; set; }
@@ -89,7 +95,6 @@ else
         workDays == null ? Enumerable.Empty<WorkDayDto>() :
         workDays.Where(d => d.Date >= StartOfWeek && d.Date <= EndOfWeek);
 
-    // Rozšíření filtru o oddělení (volitelné)
     private IEnumerable<WorkDayDto> FilteredWeekDays =>
         string.IsNullOrWhiteSpace(globalSearch)
             ? CurrentWeekDays
@@ -99,11 +104,11 @@ else
                 || d.StartTime.ToString().Contains(globalSearch)
                 || d.EndTime.ToString().Contains(globalSearch)
                 || d.TotalHours.ToString().Contains(globalSearch)
-                || DepartmentHelper.GetDisplayName(d.Department).Contains(globalSearch, StringComparison.OrdinalIgnoreCase) // NOVÉ
+                || DepartmentHelper.GetDisplayName(d.Department).Contains(globalSearch, StringComparison.OrdinalIgnoreCase)
             );
 
     private DateTime StartOfWeek =>
-        DateTime.Today.AddDays(7 * weekOffset - (int)DateTime.Today.DayOfWeek + 1); // pondělí
+        DateTime.Today.AddDays(7 * weekOffset - (int)DateTime.Today.DayOfWeek + 1);
     private DateTime EndOfWeek => StartOfWeek.AddDays(6);
 
     private string CurrentMonthName =>
@@ -121,7 +126,6 @@ else
 
     private async Task GoToSelectedDate(ChangeEventArgs? e = null)
     {
-        // Najdi WorkDay pro vybrané datum
         var selectedWorkDay = workDays?.FirstOrDefault(d => d.Date.Date == selectedDate.Date);
         if (selectedWorkDay != null)
         {
@@ -129,7 +133,6 @@ else
         }
         else
         {
-            // Pokud pro dané datum není WorkDay, přejdi na týden obsahující to datum
             var daysDiff = (selectedDate - DateTime.Today).Days;
             weekOffset = daysDiff / 7;
             await InvokeAsync(StateHasChanged);
@@ -153,17 +156,26 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var requestUrl = new Uri(Http.BaseAddress!, "api/workday").ToString();
-        logMessage = $"Awakening: {requestUrl}";
+        try
+        {
+            var requestUrl = new Uri(Http.BaseAddress!, "api/workday").ToString();
+            logMessage = $"Načítám z: {requestUrl}";
 
-        workDays = await Http.GetFromJsonAsync<List<WorkDayDto>>("api/workday");
-        if (workDays != null)
-        {
-            workDays = workDays.OrderBy(d => d.Date).ToList();
+            workDays = await Http.GetFromJsonAsync<List<WorkDayDto>>("api/workday");
+            if (workDays != null)
+            {
+                workDays = workDays.OrderBy(d => d.Date).ToList();
+                logMessage += $"<br/>Načteno {workDays.Count} záznamů.";
+            }
+            else
+            {
+                logMessage += "<br/>Chyba: Data se nepodařilo načíst nebo deserializovat.";
+            }
         }
-        else
+        catch (Exception ex)
         {
-            logMessage += "<br/>Chyba: Data se nepodařilo načíst nebo deserializovat.";
+            logMessage = $"Chyba při načítání: {ex.Message}";
+            Console.WriteLine($"Chyba: {ex}");
         }
     }
 }

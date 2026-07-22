@@ -36,7 +36,7 @@ else
             <p class="card-text"><strong>Typ:</strong> @workDay.Type</p>
             <p class="card-text"><strong>Je svátek:</strong> @(workDay.IsHoliday ? "Ano" : "Ne")</p>
             <p class="card-text"><strong>Celkem hodin:</strong> @workDay.TotalHours</p>
-            
+            <p class="card-text"><strong>Oddělení:</strong> @workDay.Department</p>
             <a class="btn btn-success" href="/edit/@workDay.WorkDayId">
                 <span class="fa fa-edit"></span> Upravit
             </a>
