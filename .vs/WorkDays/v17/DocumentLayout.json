@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\battl\\Heroku-space\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F836699B-0B89-4EE2-9255-84405554EBE6}|WorkDays.Data\\WorkDays.Data.csproj|c:\\users\\battl\\heroku-space\\workdays.data\\models\\departmentextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F836699B-0B89-4EE2-9255-84405554EBE6}|WorkDays.Data\\WorkDays.Data.csproj|solutionrelative:workdays.data\\models\\departmentextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BF4A8F1-4397-41BB-9519-690B1BB23787}|WorkDays.Api\\WorkDays.Api.csproj|c:\\users\\battl\\heroku-space\\workdays.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8BF4A8F1-4397-41BB-9519-690B1BB23787}|WorkDays.Api\\WorkDays.Api.csproj|solutionrelative:workdays.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,10 +55,6 @@
       "RelativeMoniker": "D:0:0:{8BF4A8F1-4397-41BB-9519-690B1BB23787}|WorkDays.Api\\WorkDays.Api.csproj|solutionrelative:workdays.api\\helpers\\appmappinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F836699B-0B89-4EE2-9255-84405554EBE6}|WorkDays.Data\\WorkDays.Data.csproj|c:\\users\\battl\\heroku-space\\workdays.data\\models\\departmentextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F836699B-0B89-4EE2-9255-84405554EBE6}|WorkDays.Data\\WorkDays.Data.csproj|solutionrelative:workdays.data\\models\\departmentextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8BF4A8F1-4397-41BB-9519-690B1BB23787}|WorkDays.Api\\WorkDays.Api.csproj|c:\\users\\battl\\heroku-space\\workdays.api\\workdays.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{8BF4A8F1-4397-41BB-9519-690B1BB23787}|WorkDays.Api\\WorkDays.Api.csproj|solutionrelative:workdays.api\\workdays.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\appsettings.json",
               "RelativeDocumentMoniker": "WorkDays.Api\\appsettings.json",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "WorkDayRepository.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\Repositories\\WorkDayRepository.cs",
               "RelativeDocumentMoniker": "WorkDays.Data\\Repositories\\WorkDayRepository.cs",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "WorkDays.Api\\appsettings.Development.json",
@@ -158,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "WorkDays.Api\\Properties\\launchSettings.json",
@@ -170,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AppDbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\AppDbContextFactory.cs",
               "RelativeDocumentMoniker": "WorkDays.Data\\AppDbContextFactory.cs",
@@ -182,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "WorkDays.Data\\AppDbContext.cs",
@@ -194,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AppMappingHelper.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Helpers\\AppMappingHelper.cs",
               "RelativeDocumentMoniker": "WorkDays.Api\\Helpers\\AppMappingHelper.cs",
@@ -206,19 +206,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "DepartmentExtensions.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\Models\\DepartmentExtensions.cs",
               "RelativeDocumentMoniker": "WorkDays.Data\\Models\\DepartmentExtensions.cs",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\Models\\DepartmentExtensions.cs",
               "RelativeToolTip": "WorkDays.Data\\Models\\DepartmentExtensions.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAxwAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T18:46:30.226Z"
+              "WhenOpened": "2026-07-22T18:46:30.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "WorkDay.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Data\\Models\\WorkDay.cs",
               "RelativeDocumentMoniker": "WorkDays.Data\\Models\\WorkDay.cs",
@@ -230,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "WorkDayService.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Services\\WorkDayService.cs",
               "RelativeDocumentMoniker": "WorkDays.Api\\Services\\WorkDayService.cs",
@@ -242,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "WorkDayDto.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Models\\WorkDayDto.cs",
               "RelativeDocumentMoniker": "WorkDays.Api\\Models\\WorkDayDto.cs",
@@ -255,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "WorkDayController.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Controllers\\WorkDayController.cs",
               "RelativeDocumentMoniker": "WorkDays.Api\\Controllers\\WorkDayController.cs",
@@ -279,13 +280,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Program.cs",
               "RelativeDocumentMoniker": "WorkDays.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Program.cs*",
-              "RelativeToolTip": "WorkDays.Api\\Program.cs*",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGQAAAAoAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Api\\Program.cs",
+              "RelativeToolTip": "WorkDays.Api\\Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T12:30:42.254Z",
               "EditorCaption": ""
