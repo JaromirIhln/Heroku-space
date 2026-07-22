@@ -1,2 +1,2 @@
-AdbTarget=
+AdbTarget=-s adb-AXPMVB1B05003729-guQ7Mx._adb-tls-connect._tcp
 AdbOptions=

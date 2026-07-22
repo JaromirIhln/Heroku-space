@@ -98,6 +98,7 @@ using (var scope = app.Services.CreateScope())
             Break = new TimeOnly(0, 30),
             IsHoliday = false,
             Type = DayType.Regular,
+            Department = Department.None
         });
         
         db.SaveChanges();

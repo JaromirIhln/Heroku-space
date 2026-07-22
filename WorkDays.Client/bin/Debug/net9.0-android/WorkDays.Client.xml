@@ -4,6 +4,44 @@
         <name>WorkDays.Client</name>
     </assembly>
     <members>
+        <member name="T:WorkDays.Client.Helpers.DepartmentHelper">
+            <summary>
+            Helper class for department-related operations.
+            </summary>
+        </member>
+        <member name="M:WorkDays.Client.Helpers.DepartmentHelper.GetBadgeClass(WorkDays.Client.Models.Department)">
+            <summary>
+            Gets the Bootstrap badge class for the specified department.
+            </summary>
+            <param name="department">The department</param>
+            <returns>Bootstrap CSS class for the badge</returns>
+        </member>
+        <member name="M:WorkDays.Client.Helpers.DepartmentHelper.GetTextClass(WorkDays.Client.Models.Department)">
+            <summary>
+            Gets the text color class for the specified department badge.
+            </summary>
+            <param name="department">The department</param>
+            <returns>Bootstrap text color class</returns>
+        </member>
+        <member name="M:WorkDays.Client.Helpers.DepartmentHelper.GetDisplayName(WorkDays.Client.Models.Department)">
+            <summary>
+            Gets the display name for the department.
+            </summary>
+            <param name="department">The department</param>
+            <returns>Display name in Czech</returns>
+        </member>
+        <member name="M:WorkDays.Client.Helpers.DepartmentHelper.GetIconClass(WorkDays.Client.Models.Department)">
+            <summary>
+            Gets the icon class for the department.
+            </summary>
+            <param name="department">The department</param>
+            <returns>Font Awesome icon class</returns>
+        </member>
+        <member name="T:WorkDays.Client.Models.Department">
+            <summary>
+            Represents different departments/roles in the workplace.
+            </summary>
+        </member>
         <member name="T:WorkDays.Client.Models.WorkDayDto">
             <summary>
             Represents a workday with details such as date, working hours, break duration, and type of day.
@@ -45,6 +83,11 @@
         <member name="P:WorkDays.Client.Models.WorkDayDto.Type">
             <summary>
             Gets or sets the type of day represented by this instance.
+            </summary>
+        </member>
+        <member name="P:WorkDays.Client.Models.WorkDayDto.Department">
+            <summary>
+            Gets or sets the department associated with this workday.
             </summary>
         </member>
         <member name="P:WorkDays.Client.Models.WorkDayDto.TotalHours">
