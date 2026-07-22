@@ -33,6 +33,9 @@ public class AppDbContext : DbContext
                     .HasDefaultValue(false);
                 entity.Property(e => e.Type)
                     .IsRequired();
+                entity.Property(e => e.Department)
+                    .IsRequired()
+                    .HasDefaultValue(Department.None);
                 entity.Property(e => e.TotalHours)
                     .HasComputedColumnSql("(\"EndTime\" - \"StartTime\" - \"Break\")", stored:true);
             });

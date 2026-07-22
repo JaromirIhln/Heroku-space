@@ -17,6 +17,7 @@ namespace WorkDays.Api.Helpers
                 Break = entity.Break,
                 IsHoliday = entity.IsHoliday,
                 Type = (Models.DayType)entity.Type,
+                Department = (Models.Department)entity.Department,
                 TotalHours = entity.TotalHours
             };
         }
@@ -33,6 +34,7 @@ namespace WorkDays.Api.Helpers
                 Break = dto.Break,
                 IsHoliday = dto.IsHoliday,
                 Type = (Data.Models.DayType)dto.Type,
+                Department = (Data.Models.Department)dto.Department,
                 TotalHours = dto.TotalHours
             };
         }

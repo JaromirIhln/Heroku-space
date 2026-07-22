@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6080e79b4ba6b9f129b51ecd27281337f73c6796")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+957b5aeb31f84b39632fa184f4153103e290dacb")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkDays.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

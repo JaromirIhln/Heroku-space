@@ -3,6 +3,7 @@ using WorkDays.Api.Models;
 using WorkDays.Data;
 using WorkDays.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WorkDays.Api.Services
 {
@@ -27,6 +28,7 @@ namespace WorkDays.Api.Services
                     Break = w.Break,
                     IsHoliday = w.IsHoliday,
                     Type = (Models.DayType)w.Type,
+                    Department = (Models.Department)w.Department,
                     TotalHours = w.TotalHours
                 })
                 .ToListAsync();
@@ -45,6 +47,7 @@ namespace WorkDays.Api.Services
                 Break = w.Break,
                 IsHoliday = w.IsHoliday,
                 Type = (Models.DayType)w.Type,
+                Department = (Models.Department)w.Department,
                 TotalHours = w.TotalHours
             };
         }
@@ -61,6 +64,7 @@ namespace WorkDays.Api.Services
                 Break = dto.Break,
                 IsHoliday = dto.IsHoliday,
                 Type = (Data.Models.DayType)dto.Type,
+                Department = (Data.Models.Department)dto.Department,
                 TotalHours = dto.TotalHours
             };
             _dbContext.WorkDays.Add(entity);
@@ -81,6 +85,7 @@ namespace WorkDays.Api.Services
             entity.IsHoliday = dto.IsHoliday;
             entity.Type = (Data.Models.DayType)dto.Type;
             entity.TotalHours = dto.TotalHours;
+            entity.Department = (Data.Models.Department)dto.Department;
             await _dbContext.SaveChangesAsync();
             return dto;
         }
