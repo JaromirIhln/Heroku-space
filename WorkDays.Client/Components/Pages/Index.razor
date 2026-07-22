@@ -18,7 +18,7 @@
                class="form-control" />
 
         <button class="btn btn-primary btn-sm">
-        <span class="fa fa-calendar"></span>
+        <span class="fa fa-calendar" style="font-size:large;"></span>
     </button>
     </div>
 </div>
@@ -52,7 +52,10 @@ else
                     <td class="px-2">@(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(day.Date.DayOfWeek))  @day.Date.ToString("d")</td>
                     <td class="px-2"><span class="badge bg-primary">@day.StartTime</span></td>
                     <td class="px-2"><span class="badge bg-success">@day.EndTime</span></td>
-                    <td class="px-2"><span class="badge bg-info text-dark">@day.TotalHours</span></td>
+                    <td class="px-2">               
+                        <span class="badge bg-info text-dark">@day.TotalHours</span><br />
+                        <span class="badge bg-info text-bg-dark">@day.Break</span>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -115,7 +118,7 @@ else
             // Pokud pro dané datum není WorkDay, přejdi na týden obsahující to datum
             var daysDiff = (selectedDate - DateTime.Today).Days;
             weekOffset = daysDiff / 7;
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
         }
     }
 

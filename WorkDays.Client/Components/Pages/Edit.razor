@@ -27,7 +27,7 @@ else
 		<div class="mb-2">
 			<label>Začátek:</label>
 			<input list="startTimes" @bind="startTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<datalist id="startTimes">	
+			<select id="startTimes">	
 				<option value="7:40" />
 				<option value="8:00" />
 				<option value="8:30" />
@@ -37,12 +37,12 @@ else
 				<option value="10:30" />
 				<option value="11:00" />
 				<option value="12:00" />
-			</datalist>
+			</select>
 		</div>
 		<div class="mb-2">
 			<label>Konec:</label>
 			<input list="endTimes" @bind="endTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<datalist id="endTimes">
+			<select id="endTimes">
 				<option value="14:00" />
 				<option value="15:00" />
 				<option value="15:30" />
@@ -50,17 +50,22 @@ else
 				<option value="17:00" />
 				<option value="18:00" />
 				<option value="18:30" />
-			</datalist>
+				<option value="18:40" />
+				<option value="19:00" />
+				<option value="19:40" />
+				<option value="20:00" />
+			</select>
 		</div>
 		<div class="mb-2">
 			<label>Přestávka:</label>
 			<input list="breakTimes" @bind="breakString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<datalist id="breakTimes">
+			<select id="breakTimes">
 				<option value="0:00" />
 				<option value="0:10" />
 				<option value="0:20" />
 				<option value="0:30" />
-			</datalist>
+				<option value="1:00" />
+			</select>
 		</div>
 		<div class="mb-2">
 			<label>Typ:</label>

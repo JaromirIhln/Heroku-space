@@ -695,7 +695,6 @@ C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\com\bumptech\glide\R.java
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\com\google\android\material\R.java
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
-C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\com\microsoft\maui\R.java
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\crc640a1f4d108c17e3f1\ClipboardChangeListener.java
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\crc640a8d9a12ddbf2cf2\BatteryBroadcastReceiver.java
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\crc640a8d9a12ddbf2cf2\DeviceDisplayImplementation_Listener.java
@@ -1050,3 +1049,4 @@ C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\stamp\_Conv
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\battl\Heroku-space\WorkDays.Client\obj\Debug\net9.0-android\android\src\microsoft\maui\R.java

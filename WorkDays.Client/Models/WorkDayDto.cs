@@ -1,6 +1,3 @@
-
-
-
 namespace WorkDays.Client.Models
 {
      public enum DayType
@@ -55,3 +52,4 @@ namespace WorkDays.Client.Models
         public TimeOnly TotalHours { get; set; }
     }
 }
+
