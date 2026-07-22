@@ -1,5 +1,6 @@
 ﻿@page "/detail/{Id:int}"
 @using WorkDays.Client.Models
+@using WorkDays.Client.Helpers
 @inject HttpClient Http
 
 <h3 class="text-center text-info">Podrobnosti :</h3>
@@ -13,17 +14,41 @@ else
 {
     <div class="card shadow-lg bg-body mb-3">
         <div class="card-body bg-light">
-            <h5 class="card-title text-bg-primary text-center">@workDay.Date.ToString("D")</h5>
+            <h5 class="card-title text-bg-primary text-center">
+                @workDay.Date.ToString("D")
+            </h5>
+            
+            <!-- NOVÉ - ODDĚLENÍ NA ZAČÁTKU -->
+            @if (workDay.Department != Department.None)
+            {
+                <div class="text-center mb-3">
+                    <span class="badge @DepartmentHelper.GetBadgeClass(workDay.Department) @DepartmentHelper.GetTextClass(workDay.Department)" 
+                          style="font-size: 1.2rem; padding: 0.5rem 1rem;">
+                        <i class="@DepartmentHelper.GetIconClass(workDay.Department)"></i>
+                        @DepartmentHelper.GetDisplayName(workDay.Department)
+                    </span>
+                </div>
+            }
+            
             <p class="card-text"><strong>Začátek:</strong> @workDay.StartTime</p>
             <p class="card-text"><strong>Konec:</strong> @workDay.EndTime</p>
             <p class="card-text"><strong>Přestávka:</strong> @workDay.Break</p>
             <p class="card-text"><strong>Typ:</strong> @workDay.Type</p>
             <p class="card-text"><strong>Je svátek:</strong> @(workDay.IsHoliday ? "Ano" : "Ne")</p>
             <p class="card-text"><strong>Celkem hodin:</strong> @workDay.TotalHours</p>
-            <a class="btn btn-success" href="/edit/@workDay.WorkDayId"><span class="fa fa-edit"></span> Upravit</a>
-            <a class="btn btn-secondary" href="/"><span class="fa fa-arrow-left"></span> Zpět</a>
-            <a class="btn btn-primary" href="/"><span class="fa fa-times"></span> Zrušit</a>
-            <a class="btn btn-danger" href="/delete/@workDay.WorkDayId"><span class="fa fa-trash"></span> Smazat</a>
+            
+            <a class="btn btn-success" href="/edit/@workDay.WorkDayId">
+                <span class="fa fa-edit"></span> Upravit
+            </a>
+            <a class="btn btn-secondary" href="/">
+                <span class="fa fa-arrow-left"></span> Zpět
+            </a>
+            <a class="btn btn-primary" href="/">
+                <span class="fa fa-times"></span> Zrušit
+            </a>
+            <a class="btn btn-danger" href="/delete/@workDay.WorkDayId">
+                <span class="fa fa-trash"></span> Smazat
+            </a>
         </div>
     </div>
 }

@@ -8,8 +8,18 @@ namespace WorkDays.Client.Models
         SickLeave,
         Vacation
     }
+    /// <summary>
+    /// Represents different departments/roles in the workplace.
+    /// </summary>
+    public enum Department
+    {
+        None,           // Žádné oddìlení
+        Stavba,         // Stavba - zelená
+        PickUp,         // Pick-up - modrá
+        Sanita,         // Sanita - žlutá (vaše nejoblíbenìjší)
+        Pila            // Pila/Pøíøez - èervená
+    }
 
-   
     /// <summary>
     /// Represents a workday with details such as date, working hours, break duration, and type of day.
     /// </summary>
@@ -46,6 +56,10 @@ namespace WorkDays.Client.Models
         /// Gets or sets the type of day represented by this instance.
         /// </summary>
         public DayType Type { get; set; } = DayType.Regular;
+        /// <summary>
+        /// Gets or sets the department associated with this workday.
+        /// </summary>
+        public Department Department { get; set; } = Department.None;
         /// <summary>
         /// Gets or sets the total hours represented as a <see cref="TimeOnly"/> value.
         /// </summary>

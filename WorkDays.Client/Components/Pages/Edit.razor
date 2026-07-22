@@ -1,5 +1,6 @@
 ﻿@page "/edit/{Id:int}"
 @using WorkDays.Client.Models
+@using WorkDays.Client.Helpers
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
@@ -7,140 +8,172 @@
 
 @if (isLoading)
 {
-	<p>Načítám...</p>
-
-	<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+    <p>Načítám...</p>
+    <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
 }
 else if (workDay == null)
 {
-	<div class="alert alert-danger">Záznam nenalezen.</div>
+    <div class="alert alert-danger">Záznam nenalezen.</div>
 }
 else
 {
-	<EditForm Model="workDay" OnValidSubmit="HandleValidSubmit">
-		<DataAnnotationsValidator />
-		<ValidationSummary />
-		<div class="mb-2">
-			<label>Datum:</label>
-			<InputDate @bind-Value="workDay.Date" class="form-control" />
-		</div>
-		<div class="mb-2">
-			<label>Začátek:</label>
-			<input list="startTimes" @bind="startTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<select id="startTimes">	
-				<option value="7:40" />
-				<option value="8:00" />
-				<option value="8:30" />
-				<option value="9:00" />
-				<option value="9:30" />
-				<option value="10:00" />
-				<option value="10:30" />
-				<option value="11:00" />
-				<option value="12:00" />
-			</select>
-		</div>
-		<div class="mb-2">
-			<label>Konec:</label>
-			<input list="endTimes" @bind="endTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<select id="endTimes">
-				<option value="14:00" />
-				<option value="15:00" />
-				<option value="15:30" />
-				<option value="16:00" />
-				<option value="17:00" />
-				<option value="18:00" />
-				<option value="18:30" />
-				<option value="18:40" />
-				<option value="19:00" />
-				<option value="19:40" />
-				<option value="20:00" />
-			</select>
-		</div>
-		<div class="mb-2">
-			<label>Přestávka:</label>
-			<input list="breakTimes" @bind="breakString" class="form-control text-bg-info" placeholder="HH:mm" />
-			<select id="breakTimes">
-				<option value="0:00" />
-				<option value="0:10" />
-				<option value="0:20" />
-				<option value="0:30" />
-				<option value="1:00" />
-			</select>
-		</div>
-		<div class="mb-2">
-			<label>Typ:</label>
-			<InputSelect @bind-Value="workDay.Type" class="form-control text-bg-info">
-				@foreach (var type in Enum.GetValues<DayType>())
-				{
-					<option value="@type">@type</option>
-				}
-			</InputSelect>
-		</div>
-		<div class="mb-2">
-			<label>Volno:</label>
-			<InputCheckbox @bind-Value="workDay.IsHoliday" />
-		</div>
-		<button type="submit" class="btn btn-primary">Uložit změny</button>
-		<button type="submit" class="btn btn-secondary" href="/">Zpět</button>
-	</EditForm>
-	@if (!string.IsNullOrEmpty(message))
-	{
-		<div class="alert alert-info">@message</div>
-	}
+    <EditForm Model="workDay" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        
+        <div class="mb-2">
+            <label>Datum:</label>
+            <InputDate @bind-Value="workDay.Date" class="form-control" />
+        </div>
+        
+        <div class="mb-2">
+            <label>Začátek:</label>
+            <InputSelect @bind-Value="startTimeString" class="form-control text-bg-info">
+                <option value="">-- Vyberte čas --</option>
+                <option value="7:40">7:40</option>
+                <option value="8:00">8:00</option>
+                <option value="8:30">8:30</option>
+                <option value="9:00">9:00</option>
+                <option value="9:30">9:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+            </InputSelect>
+        </div>
+        
+        <div class="mb-2">
+            <label>Konec:</label>
+            <InputSelect @bind-Value="endTimeString" class="form-control text-bg-info">
+                <option value="">-- Vyberte čas --</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="18:30">18:30</option>
+            </InputSelect>
+        </div>
+        
+        <div class="mb-2">
+            <label>Přestávka:</label>
+            <InputSelect @bind-Value="breakString" class="form-control text-bg-info">
+                <option value="">-- Vyberte --</option>
+                <option value="0:00">0:00</option>
+                <option value="0:10">0:10</option>
+                <option value="0:20">0:20</option>
+                <option value="0:30">0:30</option>
+            </InputSelect>
+        </div>
+        
+        <div class="mb-2">
+            <label>Typ:</label>
+            <InputSelect @bind-Value="workDay.Type" class="form-control text-bg-info">
+                @foreach (var type in Enum.GetValues<DayType>())
+                {
+                    <option value="@type">@type</option>
+                }
+            </InputSelect>
+        </div>
+        
+        <!-- NOVÉ POLE PRO ODDĚLENÍ -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">
+                <i class="fa fa-users"></i> Oddělení:
+            </label>
+            <InputSelect @bind-Value="workDay.Department" class="form-control form-select">
+                @foreach (var dept in Enum.GetValues<Department>())
+                {
+                    <option value="@dept">
+                        @DepartmentHelper.GetDisplayName(dept)
+                    </option>
+                }
+            </InputSelect>
+            
+            <!-- Náhled vybraného oddělení -->
+            @if (workDay.Department != Department.None)
+            {
+                <div class="mt-2">
+                    <span class="badge @DepartmentHelper.GetBadgeClass(workDay.Department) @DepartmentHelper.GetTextClass(workDay.Department) fs-6">
+                        <i class="@DepartmentHelper.GetIconClass(workDay.Department)"></i>
+                        @DepartmentHelper.GetDisplayName(workDay.Department)
+                    </span>
+                </div>
+            }
+        </div>
+        
+        <div class="mb-2">
+            <label>Volno:</label>
+            <InputCheckbox @bind-Value="workDay.IsHoliday" />
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-save"></i> Uložit změny
+        </button>
+        <a class="btn btn-secondary" href="/">
+            <i class="fa fa-arrow-left"></i> Zpět
+        </a>
+    </EditForm>
+    
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert alert-info mt-3">@message</div>
+    }
 }
 
 @code {
-	[Parameter]
-	public int Id { get; set; }
+    [Parameter]
+    public int Id { get; set; }
 
-	private WorkDayDto? workDay;
-	private string? startTimeString;
-	private string? endTimeString;
-	private string? breakString;
-	private string? message;
-	private bool isLoading = true;
+    private WorkDayDto? workDay;
+    private string? startTimeString;
+    private string? endTimeString;
+    private string? breakString;
+    private string? message;
+    private bool isLoading = true;
 
-	protected override async Task OnInitializedAsync()
-	{
-		try
-		{
-			workDay = await Http.GetFromJsonAsync<WorkDayDto>($"api/workday/{Id}");
-			if (workDay != null)
-			{
-				startTimeString = workDay.StartTime.ToString("HH:mm");
-				endTimeString = workDay.EndTime.ToString("HH:mm");
-				breakString = workDay.Break.ToString("HH:mm");
-			}
-		}
-		catch
-		{
-			workDay = null;
-		}
-		isLoading = false;
-	}
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            workDay = await Http.GetFromJsonAsync<WorkDayDto>($"api/workday/{Id}");
+            if (workDay != null)
+            {
+                startTimeString = workDay.StartTime.ToString("HH:mm");
+                endTimeString = workDay.EndTime.ToString("HH:mm");
+                breakString = workDay.Break.ToString("HH:mm");
+            }
+        }
+        catch
+        {
+            workDay = null;
+        }
+        isLoading = false;
+    }
 
-	private async Task HandleValidSubmit()
-	{
-		try
-		{
-			if (workDay == null) return;
-			workDay.StartTime = TimeOnly.Parse(startTimeString ?? "00:00");
-			workDay.EndTime = TimeOnly.Parse(endTimeString ?? "00:00");
-			workDay.Break = TimeOnly.Parse(breakString ?? "00:00");
-			var response = await Http.PutAsJsonAsync($"api/workday/{Id}", workDay);
-			if (response.IsSuccessStatusCode)
-			{
-				message = "Změny byly uloženy.";
-				Navigation.NavigateTo($"/detail/{Id}");
-			}
-			else
-			{
-				message = "Chyba při ukládání: " + response.ReasonPhrase;
-			}
-		}
-		catch (Exception ex)
-		{
-			message = $"Chyba: {ex.Message}";
-		}
-	}
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            if (workDay == null) return;
+            workDay.StartTime = TimeOnly.Parse(startTimeString ?? "00:00");
+            workDay.EndTime = TimeOnly.Parse(endTimeString ?? "00:00");
+            workDay.Break = TimeOnly.Parse(breakString ?? "00:00");
+            var response = await Http.PutAsJsonAsync($"api/workday/{Id}", workDay);
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Změny byly uloženy.";
+                Navigation.NavigateTo($"/detail/{Id}");
+            }
+            else
+            {
+                message = "Chyba při ukládání: " + response.ReasonPhrase;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Chyba: {ex.Message}";
+        }
+    }
 }

@@ -1,7 +1,9 @@
 ﻿@page "/"
 @using WorkDays.Client.Models
+@using WorkDays.Client.Helpers
 @using System.Linq
 @inject HttpClient Http
+
 <!-- Navbar přesunut do Layoutu -->
 
 <div class="d-flex justify-content-between align-items-center shadow-lg p-2 mb-2 mt-2 bg-body rounded ms-2 me-2">
@@ -35,6 +37,7 @@ else
                 <th class="px-2">Začátek</th>
                 <th class="px-2">Konec</th>
                 <th class="px-2">Celkem</th>
+                <th class="px-2">Oddělení</th> <!-- NOVÝ SLOUPEC -->
             </tr>
         </thead>
         <tbody>
@@ -55,6 +58,15 @@ else
                     <td class="px-2">               
                         <span class="badge bg-info text-dark">@day.TotalHours</span><br />
                         <span class="badge bg-info text-bg-dark">@day.Break</span>
+                    </td>
+                    <td class="px-2"> <!-- NOVÝ SLOUPEC PRO ODDĚLENÍ -->
+                        @if (day.Department != Department.None)
+                        {
+                            <span class="badge @DepartmentHelper.GetBadgeClass(day.Department) @DepartmentHelper.GetTextClass(day.Department)">
+                                <i class="@DepartmentHelper.GetIconClass(day.Department)"></i>
+                                @DepartmentHelper.GetDisplayName(day.Department)
+                            </span>
+                        }
                     </td>
                 </tr>
             }
@@ -77,6 +89,7 @@ else
         workDays == null ? Enumerable.Empty<WorkDayDto>() :
         workDays.Where(d => d.Date >= StartOfWeek && d.Date <= EndOfWeek);
 
+    // Rozšíření filtru o oddělení (volitelné)
     private IEnumerable<WorkDayDto> FilteredWeekDays =>
         string.IsNullOrWhiteSpace(globalSearch)
             ? CurrentWeekDays
@@ -86,6 +99,7 @@ else
                 || d.StartTime.ToString().Contains(globalSearch)
                 || d.EndTime.ToString().Contains(globalSearch)
                 || d.TotalHours.ToString().Contains(globalSearch)
+                || DepartmentHelper.GetDisplayName(d.Department).Contains(globalSearch, StringComparison.OrdinalIgnoreCase) // NOVÉ
             );
 
     private DateTime StartOfWeek =>

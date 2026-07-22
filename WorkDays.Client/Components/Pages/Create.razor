@@ -1,5 +1,6 @@
 ﻿@page "/create"
 @using WorkDays.Client.Models
+@using WorkDays.Client.Helpers
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
@@ -16,43 +17,43 @@
 	<div class="mb-2">
 		<label>Začátek:</label>
 		<input list="startTimes" @bind="startTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-		<select id="startTimes">
-			<option value="7:40" />
-			<option value="8:00" />
-			<option value="8:30" />
-			<option value="9:00" />
-			<option value="9:30" />
-			<option value="10:00" />
-			<option value="10:30" />
-			<option value="11:00" />
-			<option value="12:00" />
+		<select class="form-select" id="startTimes" aria-label="Start times">
+			<option value="7:40" >7:40</option>
+			<option value="8:00" >8:00</option>
+			<option value="8:30" >8:30</option>
+			<option value="9:00" >9:00</option>
+			<option value="9:30" >9:30</option>
+			<option value="10:00" >10:00</option>
+			<option value="10:30" >10:30</option>
+			<option value="11:00" >11:00</option>
+			<option value="12:00" >12:00</option>
 		</select>
 	</div>
 	<div class="mb-2">
 		<label>Konec:</label>
 		<input list="endTimes" @bind="endTimeString" class="form-control text-bg-info" placeholder="HH:mm" />
-		<select id="endTimes">
-			<option value="14:00" />
-			<option value="15:00" />
-			<option value="15:30" />
-			<option value="16:00" />
-			<option value="17:00" />
-			<option value="18:00" />
-			<option value="18:30" />
-			<option value="18:40" />
-            <option value="19:00" />
-            <option value="19:40" />
-            <option value="20:00" />
+		<select class="form-select" id="endTimes" aria-label="End times">
+			<option value="14:00" >14:00</option>
+			<option value="15:00" >15:00</option>
+			<option value="15:30" >15:30</option>
+			<option value="16:00" >16:00</option>
+			<option value="17:00" >17:00</option>
+			<option value="18:00" >18:00</option>
+			<option value="18:30" >18:30</option>
+			<option value="18:40" >18:40</option>
+            <option value="19:00" >19:00</option>
+            <option value="19:40" >19:40</option>
+            <option value="20:00" >20:00</option>
 		</select>
 	</div>
 	<div class="mb-2">
 		<label>Přestávka:</label>
 		<input list="breakTimes" @bind="breakString" class="form-control text-bg-info" placeholder="HH:mm" />
-		<select id="breakTimes">
-			<option value="00:15" />
-			<option value="00:30" />
-			<option value="00:45" />
-			<option value="01:00" />
+		<select id="breakTimes" class="form-select" aria-label="Break times">
+			<option value="00:15" >00:15</option>
+			<option value="00:30" >00:30</option>
+			<option value="00:45" >00:45</option>
+			<option value="01:00" >01:00</option>
 		</select>
 	</div>
 	<div class="mb-2">
@@ -68,6 +69,31 @@
 		<label>Je svátek:</label>
 		<InputCheckbox @bind-Value="workDay.IsHoliday" />
 	</div>
+	<!-- NOVÉ POLE PRO ODDĚLENÍ -->
+    <div class="mb-3">
+        <label class="form-label fw-bold">
+            <i class="fa fa-users"></i> Oddělení:
+        </label>
+        <InputSelect @bind-Value="workDay.Department" class="form-control form-select">
+            @foreach (var dept in Enum.GetValues<Department>())
+            {
+                <option value="@dept">
+                    @DepartmentHelper.GetDisplayName(dept)
+                </option>
+            }
+        </InputSelect>
+        
+        <!-- Náhled vybraného oddělení -->
+        @if (workDay.Department != Department.None)
+        {
+            <div class="mt-2">
+                <span class="badge @DepartmentHelper.GetBadgeClass(workDay.Department) @DepartmentHelper.GetTextClass(workDay.Department) fs-6">
+                    <i class="@DepartmentHelper.GetIconClass(workDay.Department)"></i>
+                    @DepartmentHelper.GetDisplayName(workDay.Department)
+                </span>
+            </div>
+        }
+    </div>
 	<button type="submit" class="btn btn-primary">Uložit</button>
 </EditForm>
 
