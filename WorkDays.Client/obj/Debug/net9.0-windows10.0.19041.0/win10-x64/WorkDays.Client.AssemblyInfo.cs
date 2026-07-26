@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a1fd8ce00f76efa8ccc61d93d7f3dc4062d2daa4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2c45bec7f26498907bcb6226da0b9386e5853bbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkDays.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\helpers\\departmenthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +13,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\workdays.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\calculator.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\calculator.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -142,12 +142,11 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-22T19:31:44.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T19:31:44.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Constants.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Constants.cs",
               "RelativeDocumentMoniker": "Constants.cs",
@@ -155,25 +154,23 @@
               "RelativeToolTip": "Constants.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T19:02:18.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T19:02:18.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DepartmentHelper.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Helpers\\DepartmentHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\DepartmentHelper.cs",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Helpers\\DepartmentHelper.cs",
               "RelativeToolTip": "Helpers\\DepartmentHelper.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T19:00:49.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T19:00:49.138Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Component.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Component.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Component.razor",
@@ -181,12 +178,11 @@
               "RelativeToolTip": "Components\\Pages\\Component.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-22T18:16:35.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T18:16:35.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Calculator.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Calculator.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Calculator.razor",
@@ -194,8 +190,7 @@
               "RelativeToolTip": "Components\\Pages\\Calculator.razor",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T20:58:23.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T20:58:23.237Z"
             },
             {
               "$type": "Document",
@@ -223,42 +218,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Index.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Index.razor",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Index.razor",
               "RelativeToolTip": "Components\\Pages\\Index.razor",
-              "ViewState": "AgIAAGYAAAAAAAAAAIAywIkAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T22:47:22.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T22:47:22.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Detail.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Detail.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Detail.razor",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Detail.razor",
               "RelativeToolTip": "Components\\Pages\\Detail.razor",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAACoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T21:20:17.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T21:20:17.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Edit.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Edit.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Edit.razor",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Edit.razor",
               "RelativeToolTip": "Components\\Pages\\Edit.razor",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEcAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAACAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T22:06:34.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T22:06:34.943Z"
             },
             {
               "$type": "Document",
@@ -270,25 +262,24 @@
               "RelativeToolTip": "Components\\Pages\\Home.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T20:12:45.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T20:12:45.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Create.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Create.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Create.razor",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Create.razor",
               "RelativeToolTip": "Components\\Pages\\Create.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-06T21:39:58.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "WorkDayDto.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Models\\WorkDayDto.cs",
               "RelativeDocumentMoniker": "Models\\WorkDayDto.cs",
@@ -296,8 +287,7 @@
               "RelativeToolTip": "Models\\WorkDayDto.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAiwDwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T22:13:05.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T22:13:05.312Z"
             },
             {
               "$type": "Document",
@@ -313,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "WorkDays.Client.csproj",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\WorkDays.Client.csproj",
               "RelativeDocumentMoniker": "WorkDays.Client.csproj",
@@ -321,8 +311,7 @@
               "RelativeToolTip": "WorkDays.Client.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-06T20:21:47.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T20:21:47.421Z"
             },
             {
               "$type": "Document",
@@ -334,8 +323,7 @@
               "RelativeToolTip": "Components\\Pages\\Delete.razor",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T22:07:04.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T22:07:04.028Z"
             }
           ]
         },

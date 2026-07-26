@@ -30,6 +30,7 @@ else
             <label>Začátek:</label>
             <InputSelect @bind-Value="startTimeString" class="form-control text-bg-info">
                 <option value="">-- Vyberte čas --</option>
+                <option value="0:00">0:00</option>
                 <option value="7:40">7:40</option>
                 <option value="8:00">8:00</option>
                 <option value="8:30">8:30</option>
@@ -46,6 +47,7 @@ else
             <label>Konec:</label>
             <InputSelect @bind-Value="endTimeString" class="form-control text-bg-info">
                 <option value="">-- Vyberte čas --</option>
+                <option value="0:00">0:00</option>
                 <option value="14:00">14:00</option>
                 <option value="15:00">15:00</option>
                 <option value="15:30">15:30</option>
