@@ -18,20 +18,48 @@ namespace WorkDays.Api.Services
 
         public async Task<IEnumerable<WorkDayDto>> GetAllWorkDaysAsync()
         {
-            return await _dbContext.WorkDays
-                .Select(w => new WorkDayDto
-                {
-                    WorkDayId = w.WorkDayId,
-                    Date = w.Date,
-                    StartTime = w.StartTime,
-                    EndTime = w.EndTime,
-                    Break = w.Break,
-                    IsHoliday = w.IsHoliday,
-                    Type = (Models.DayType)w.Type,
-                    Department = (Models.Department)w.Department,
-                    TotalHours = w.TotalHours
-                })
-                .ToListAsync();
+            //return await _dbContext.WorkDays
+            //    .Select(w => new WorkDayDto
+            //    {
+            //        WorkDayId = w.WorkDayId,
+            //        Date = w.Date,
+            //        StartTime = w.StartTime,
+            //        EndTime = w.EndTime,
+            //        Break = w.Break,
+            //        IsHoliday = w.IsHoliday,
+            //        Type = (Models.DayType)w.Type,
+            //        Department = (Models.Department)w.Department,
+            //        TotalHours = w.TotalHours
+            //    })
+            //    .ToListAsync();
+            var workDays = await _dbContext.WorkDays.ToListAsync();
+
+            // DEBUG: Logujte co je v databázi
+            foreach (var wd in workDays.Take(3))
+            {
+                Console.WriteLine($"DB: ID={wd.WorkDayId}, Dept={wd.Department} (int: {(int)wd.Department})");
+            }
+
+            var dtos = workDays.Select(w => new WorkDayDto
+            {
+                WorkDayId = w.WorkDayId,
+                Date = w.Date,
+                StartTime = w.StartTime,
+                EndTime = w.EndTime,
+                Break = w.Break,
+                IsHoliday = w.IsHoliday,
+                Type = (Models.DayType)w.Type,
+                Department = (Models.Department)w.Department,
+                TotalHours = w.TotalHours
+            }).ToList();
+
+            // DEBUG: Logujte co je v DTO
+            foreach (var dto in dtos.Take(3))
+            {
+                Console.WriteLine($"DTO: ID={dto.WorkDayId}, Dept={dto.Department} (int: {(int)dto.Department})");
+            }
+
+            return dtos;
         }
 
         public async Task<WorkDayDto> GetWorkDayByIdAsync(int id)
