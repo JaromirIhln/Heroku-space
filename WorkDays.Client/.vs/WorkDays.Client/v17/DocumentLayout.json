@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\create.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|solutionrelative:components\\pages\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{776D4B3F-0F2C-4A52-8B38-E4EDD0DFB20F}|WorkDays.Client.csproj|c:\\users\\battl\\heroku-space\\workdays.client\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DepartmentHelper.cs",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Helpers\\DepartmentHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\DepartmentHelper.cs",
@@ -230,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Detail.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Detail.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Detail.razor",
@@ -242,15 +242,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Edit.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Edit.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Edit.razor",
               "ToolTip": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Edit.razor",
               "RelativeToolTip": "Components\\Pages\\Edit.razor",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAACAAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAACAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-06T22:06:34.943Z"
+              "WhenOpened": "2025-09-06T22:06:34.943Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -266,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Create.razor",
               "DocumentMoniker": "C:\\Users\\battl\\Heroku-space\\WorkDays.Client\\Components\\Pages\\Create.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Create.razor",
